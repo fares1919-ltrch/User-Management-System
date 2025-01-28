@@ -80,10 +80,7 @@ This component retrieves a user’s details using their CIN.
     - Displays loading, error, or success messages as appropriate.
 
 ```jsx
-javascript
-
 // handleGetUser fetches user details based on CIN and displays the result.
-
 ```
 
 ### **ModifyUser.js**
@@ -97,10 +94,7 @@ This component allows users to modify their details.
     - Displays messages (success/error) after modification attempt.
 
 ```jsx
-javascript
-CopyEdit
 // handleModifyUser sends modified data to the backend and updates the user.
-
 ```
 
 ### **DeleteUser.js**
@@ -113,10 +107,7 @@ This component allows users to delete their account using CIN.
     - Deletes user data from the backend and provides feedback (success/error message).
 
 ```jsx
-javascript
-CopyEdit
 // handleDeleteUser sends a request to delete the user from the backend.
-
 ```
 
 ### **Header.js**
@@ -124,10 +115,7 @@ CopyEdit
 This component provides navigation links for the user to register, view, modify, or delete their account.
 
 ```jsx
-javascript
-CopyEdit
 // Contains navigation links using React Router.
-
 ```
 
 ### **Signature.js**
@@ -139,10 +127,7 @@ This component displays a fixed signature at the bottom-right corner of the page
     - Displays the text "Fares Latrach."
 
 ```jsx
-javascript
-CopyEdit
 // Signature styled with hover and animation effects.
-
 ```
 
 ### **Signature.css**
@@ -152,10 +137,7 @@ This CSS file styles the `Signature` component with a modern, interactive design
 - Includes styles for positioning, colors, hover effects, and animations (shake).
 
 ```css
-css
-CopyEdit
 // Custom styles and animations for the signature element.
-
 ```
 
 ---
@@ -167,12 +149,9 @@ CopyEdit
 The backend is built with Express.js to handle HTTP requests. The server is set up to listen on port 5000 and includes middleware for JSON parsing and enabling CORS.
 
 ```jsx
-javascript
-CopyEdit
 const app = express();
 app.use(cors()); // Enable CORS
 app.use(express.json()); // Parse JSON bodies
-
 ```
 
 ### **Routes**
@@ -185,13 +164,10 @@ Registers a new user with a unique CIN.
 - **Output**: Success message or error if the CIN already exists.
 
 ```jsx
-javascript
-CopyEdit
 app.post("/api/register", (req, res) => {
   const { name, prename, age, cin } = req.body;
   // Check if CIN exists and register new user if valid
 });
-
 ```
 
 ### **GET /api/get/:cin**
@@ -202,13 +178,10 @@ Retrieves a user's details using their CIN.
 - **Output**: User data if found, or error message if not.
 
 ```jsx
-javascript
-CopyEdit
 app.get("/api/get/:cin", (req, res) => {
   const { cin } = req.params;
   // Search for the user with the given CIN and return details
 });
-
 ```
 
 ### **PUT /api/modify/:cin**
@@ -219,13 +192,10 @@ Modifies an existing user's details based on their CIN.
 - **Output**: Updated user data or error message if user is not found.
 
 ```jsx
-javascript
-CopyEdit
 app.put("/api/modify/:cin", (req, res) => {
   const { cin } = req.params;
   // Update user details if found
 });
-
 ```
 
 ### **DELETE /api/delete/:cin**
@@ -236,13 +206,10 @@ Deletes a user from the system using their CIN.
 - **Output**: Success message or error message if the user is not found.
 
 ```jsx
-javascript
-CopyEdit
 app.delete("/api/delete/:cin", (req, res) => {
   const { cin } = req.params;
   // Remove user from the list
 });
-
 ```
 
 ---
@@ -259,49 +226,34 @@ app.delete("/api/delete/:cin", (req, res) => {
 1. **Clone the repository**:
     
     ```bash
-    bash
-    CopyEdit
     git clone <repository_url>
     cd <project_folder>
-    
     ```
     
 2. **Install Backend Dependencies**:
     
     ```bash
-    bash
-    CopyEdit
     cd backend
     npm install
-    
     ```
     
 3. **Install Frontend Dependencies**:
     
     ```bash
-    bash
-    CopyEdit
     cd frontend
     npm install
-    
     ```
     
 4. **Run the Backend Server**:
     
     ```bash
-    bash
-    CopyEdit
     npm start
-    
     ```
     
 5. **Run the Frontend Application**:
     
     ```bash
-    bash
-    CopyEdit
     npm start
-    
     ```
     
 6. **Access the Application**:
